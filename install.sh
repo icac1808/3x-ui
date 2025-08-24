@@ -93,7 +93,7 @@ elif [[ "${release}" == "alpine" ]]; then
 elif [[ "${release}" == "opensuse-tumbleweed" ]]; then
     echo "您的操作系统是 OpenSUSE Tumbleweed"
 elif [[ "${release}" == "centos" ]]; then
-    if [[ ${os_version} -lt 8 ]]; then
+    if [[ ${os_version} -lt 7 ]]; then
         echo -e "${red} 请使用 CentOS 8 或更高版本 ${plain}\n" && exit 1
     fi
 elif [[ "${release}" == "ubuntu" ]]; then
@@ -274,7 +274,7 @@ install_x-ui() {
             exit 1
         fi
     fi
-    wget -O /usr/bin/x-ui-temp https://raw.githubusercontent.com/xeefei/3x-ui/main/x-ui.sh
+    wget -O /usr/bin/x-ui-temp https://raw.githubusercontent.com/icac1808/3x-ui/main/x-ui.sh
 
     # Stop x-ui service and remove old resources
     if [[ -e /usr/local/x-ui/ ]]; then
